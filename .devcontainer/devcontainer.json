@@ -1,0 +1,55 @@
+{
+  "name": "NIKA Website",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+
+  "features": {
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+
+  "remoteUser": "node",
+  "mounts": [
+    "source=claude-code-bashhistory-${devcontainerId},target=/commandhistory,type=volume",
+    "source=claude-code-config-${devcontainerId},target=/home/node/.claude,type=volume"
+  ],
+  "containerEnv": {
+    "NODE_OPTIONS": "--max-old-space-size=4096",
+    "CLAUDE_CONFIG_DIR": "/home/node/.claude",
+    "POWERLEVEL9K_DISABLE_GITSTATUS": "true"
+  },
+
+  "postCreateCommand": "sudo chown -R node:node /home/node/.claude && npm install",
+  "postStartCommand": "npm run dev",
+
+  "forwardPorts": [3000, 8000],
+  "portsAttributes": {
+    "3000": { "label": "serve (npx serve)", "onAutoForward": "notify" },
+    "8000": { "label": "python http.server", "onAutoForward": "notify" }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Claude Code
+        // "anthropic.claude-code",
+
+        // HTML / CSS / JS
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ritwickdey.liveserver",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "ecmel.vscode-html-css",
+        "pranaygp.vscode-css-peek",
+        "christian-kohler.path-intellisense",
+
+        // Git
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "liveServer.settings.port": 3000
+      }
+    }
+  }
+}
