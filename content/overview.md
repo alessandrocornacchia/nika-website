@@ -7,7 +7,7 @@ What is NIKA?
 :::
 
 ::: desc
-NIKA is a unified platform that bridges AI agents with realistic network environments, enabling reproducible evaluation and real-time troubleshooting.
+Think about SWE-bench, but for network troubleshooting: agents interact with real CLIs and telemetry across hundreds of reproducible network incidents, all running on your laptop, cluster, or cloud.
 :::
 
 ::: card1_title
@@ -15,7 +15,7 @@ Benchmark Suite
 :::
 
 ::: card1_body
-NIKA offers **685 curated network incidents**, common across data centers and ISPs. Powered by state-of-the-art network emulators, the benchmark evaluates AI agents against  real-world protocols (e.g., BPG, VXLAN, DNS) and network stacks.
+NIKA contains **685 curated network incidents** from data center networks to ISPs. Powered by state-of-the-art network emulators, the benchmark challenges AI agents against real-world protocols (e.g., BGP, VXLAN, DNS) and network stacks.
 :::
 
 ::: card2_title
@@ -23,7 +23,7 @@ Orchestration Platform
 :::
 
 ::: card2_body
-A modular plug-and-play platform that connects AI agents with the network environment via MCP servers, enabling **real-time troubleshooting actions** in realistic conditions and providing a human-facing interface to **evaluate** agent performance.
+A modular platform that orchestrates **incident replay**, connects AI agents to the network environment via MCP servers for live diagnostic interactions, and provides human-facing **evaluations** of agent performance.
 :::
 
 ::: image_caption
