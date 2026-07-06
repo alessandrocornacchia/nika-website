@@ -7,7 +7,7 @@ Up and Running in Minutes
 :::
 
 ::: desc
-Requires [Kathará](https://www.kathara.org/) (Docker-based) and Python ≥ 3.12. Uses [uv](https://docs.astral.sh/uv) for dependency management.
+Requires [Kathará](https://www.kathara.org/) (Docker-based) and Python ≥ 3.12.
 :::
 
 ::: step1_title

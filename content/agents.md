@@ -7,11 +7,11 @@ Bring Any Agent, Any Model
 :::
 
 ::: desc
-Frontier models, coding assistants, and your own custom agents all run on the exact same tasks, so results are directly comparable.
+Frontier models, coding assistants, and your own custom agents: swap them in and out of the NIKA benchmark with a single command.
 :::
 
 ::: byo_card_title
-Bring Your Own
+Bring Your Own (BYO)
 :::
 
 ::: byo_card_body
@@ -31,7 +31,7 @@ Native Agents
 :::
 
 ::: sdk_card_body
-Go deeper with agents built directly on each provider's own toolkit for tighter control.
+Want to focus on the creation of new tasks, not agent plumbing? Use default agents and go ahead.
 :::
 
 ::: community_card_title
@@ -39,5 +39,5 @@ Community
 :::
 
 ::: community_card_body
-Explore agents shared by the community — and a starting point for contributing your own.
+Explore agents and skills shared by the community, and contribute your own. Leaderboard is coming soon.
 :::

@@ -728,7 +728,7 @@ nika eval judge</code></pre>
               />
             </svg>
             <span>OpenAI</span>
-            <small>GPT-5 · GPT-4.1</small>
+            <small>API or Codex CLI</small>
           </div>
           <div class="agent-logo anthropic">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -737,7 +737,7 @@ nika eval judge</code></pre>
               />
             </svg>
             <span>Anthropic</span>
-            <small>Claude</small>
+            <small>API or Claude Code</small>
           </div>
           <div class="agent-logo gemini">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -746,7 +746,7 @@ nika eval judge</code></pre>
               />
             </svg>
             <span>Gemini</span>
-            <small>via MCP</small>
+            <small>API or via MCP</small>
           </div>
           <div class="agent-logo byo">
             <svg
@@ -763,7 +763,7 @@ nika eval judge</code></pre>
               />
             </svg>
             <span>Bring Your Own</span>
-            <small>any MCP agent</small>
+            <small>any agent SDK</small>
           </div>
         </div>
 
@@ -913,12 +913,13 @@ LANGSMITH_API_KEY=&lt;your-key&gt;</code></pre>
                 ><code><span class="cm"># List available scenarios</span>
 nika env list
 
-<span class="cm"># Deploy a scenario (scalable labs take -s s | m | l)</span>
-nika env run dc_clos_bgp -s s
+<span class="cm"># Deploy a scenario</span>
+nika env run dc-clos-bgp-link-flapping</code>
+</pre>
 
-<span class="cm"># Inspect a fault's parameters, then inject it</span>
-nika failure describe link_down
-nika failure inject link_down --set host_name=pc1 --set intf_name=eth0</code></pre>
+<!-- <span class="cm"># Inject a fault</span>
+nika failure inject link_down --set host_name=pc1 --set intf_name=eth0 -->
+
               </div>
             </div>
           </div>
