@@ -26,7 +26,7 @@ jobs:
       - name: Stage site
         run: |
           mkdir -p _site
-          cp index.html _site/
+          cp index.html sitemap.xml _site/
           cp -R css js assets _site/
       # Publishes to the gh-pages branch of sands-lab/nika, which serves
       # https://sands-lab.github.io/nika/. ACTIONS_DEPLOY_KEY is the private
