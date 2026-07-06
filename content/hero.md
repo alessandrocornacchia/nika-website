@@ -1,5 +1,5 @@
 ::: badge
-New — 640 distinct troubleshooting incidents available
+New — support for Claude Code and Codex CLI available
 :::
 
 ::: desc
