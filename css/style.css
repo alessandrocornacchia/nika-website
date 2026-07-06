@@ -369,12 +369,15 @@ code {
 
 /* ── OVERVIEW ────────────────────────────────────────────────────────────── */
 .overview-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.overview-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  gap: 24px;
 }
-.overview-cards { display: flex; flex-direction: column; gap: 24px; }
 
 .overview-card {
   background: var(--bg-card);
@@ -478,7 +481,7 @@ code {
 /* ── SCENARIOS ───────────────────────────────────────────────────────────── */
 .scenarios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 .scenario-card {
@@ -763,6 +766,144 @@ code {
 }
 .mcp-note a { color: var(--cyan); }
 
+/* ── AGENTS ──────────────────────────────────────────────────────────────── */
+.agents-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.agent-logo {
+  flex: 1 1 180px;
+  max-width: 240px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+.agent-logo:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.agent-logo svg { width: 34px; height: 34px; margin-bottom: 6px; }
+.agent-logo span { font-size: 0.9375rem; font-weight: 700; color: #fff; }
+.agent-logo small { font-size: 0.75rem; color: var(--text-dim); }
+.agent-logo.openai svg    { color: #10a37f; }
+.agent-logo.anthropic svg { color: #d97757; }
+.agent-logo.gemini svg    { color: #4285f4; }
+.agent-logo.byo svg       { color: var(--cyan); }
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.agent-swap {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+.agent-swap-copy h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.agent-swap-copy p {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.agents-note { text-align: left; margin-top: 16px; font-size: 0.8125rem; }
+
+/* Small inline code snippet inside overview cards */
+.ov-code {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: #0a0e18;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: #c9d1d9;
+  overflow-x: auto;
+}
+.ov-code code { background: none; padding: 0; color: inherit; font-size: inherit; }
+.yk { color: #79c0ff; }
+
+/* ── EXTEND / AUTHOR SCENARIOS ───────────────────────────────────────────── */
+.extend-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.extend-anatomy h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.extend-fields { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.extend-fields li { display: flex; gap: 14px; align-items: flex-start; }
+.extend-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.extend-dot.cyan   { background: var(--cyan); }
+.extend-dot.purple { background: var(--purple); }
+.extend-dot.green  { background: var(--green); }
+.extend-dot.orange { background: var(--orange); }
+.extend-fields code { font-size: 0.8125rem; font-weight: 600; color: #fff; }
+.extend-fields p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+.extend-run {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+.extend-run-copy h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.extend-run-copy p {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.extend-note { text-align: center; }
+
 /* ── CITATION ────────────────────────────────────────────────────────────── */
 .cite-grid {
   display: grid;
@@ -880,8 +1021,10 @@ code {
     border-bottom: 1px solid var(--border);
   }
 
-  .overview-grid { grid-template-columns: 1fr; }
+  .overview-cards  { grid-template-columns: 1fr; }
+  .scenarios-grid  { grid-template-columns: repeat(2, 1fr); }
   .footer-top    { grid-template-columns: 1fr 1fr; }
+  .agent-swap    { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -889,6 +1032,7 @@ code {
   .hero-stats { gap: 0; }
   .stat { padding: 8px 16px; }
   .stat-divider { display: none; }
+  .scenarios-grid { grid-template-columns: 1fr; }
   .qs-step { grid-template-columns: 1fr; }
   .qs-step-num { display: none; }
   .cite-grid { grid-template-columns: 1fr; }

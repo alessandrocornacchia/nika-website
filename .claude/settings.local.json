@@ -1,4 +1,28 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(git checkout *)",
+      "Bash(git stash *)",
+      "Bash(node build.js)",
+      "Bash(cp index.html /tmp/a.html)",
+      "Read(//tmp/**)",
+      "Bash(npm install *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl -sL https://raw.githubusercontent.com/sands-lab/nika/main/README.md -o nika_readme.md)",
+      "Bash(curl -sL https://raw.githubusercontent.com/sands-lab/nika/main/docs/creating-benchmark-tasks.md -o tasks.md)",
+      "Bash(curl -sL https://raw.githubusercontent.com/sands-lab/nika/main/benchmark/benchmark_full.yaml -o bench.yaml)",
+      "Bash(node *)",
+      "Bash(awk 'NF==0{c++;next}{if\\(c>=2\\)print NR-1\": \"c\" blank lines before line \"NR; c=0}' index.template.html)",
+      "Bash(sed -i 's#<section class=\"section section-alt\" id=\"features\">#<section class=\"section\" id=\"features\">#' index.template.html)",
+      "Bash(sed -i 's#<section class=\"section\" id=\"scenarios\">#<section class=\"section section-alt\" id=\"scenarios\">#' index.template.html)",
+      "Bash(sed -i 's#<section class=\"section section-alt\" id=\"issues\">#<section class=\"section\" id=\"issues\">#' index.template.html)",
+      "Bash(sed -i 's#<section class=\"section\" id=\"agents\">#<section class=\"section section-alt\" id=\"agents\">#' index.template.html)",
+      "Bash(sed -i 's#<section class=\"section section-alt\" id=\"quickstart\">#<section class=\"section\" id=\"quickstart\">#' index.template.html)",
+      "Bash(python3 *)",
+      "Bash(npm run *)"
+    ]
+  },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": false,

@@ -1,0 +1,7 @@
+# Generated output — edit content/*.md and index.template.html instead.
+index.html
+
+# Section content uses ":::" fenced blocks. Prettier's Markdown formatter
+# indents the closing fences and rewrites list markers, which breaks the
+# build parser — so keep these files hand-formatted.
+content/

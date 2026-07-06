@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "serve . --listen 3000"
+    "build": "node build.js",
+    "dev": "node dev.js"
   },
   "devDependencies": {
+    "browser-sync": "^3.0.4",
     "serve": "^14.2.6"
+  },
+  "dependencies": {
+    "marked": "^12.0.2"
   }
 }

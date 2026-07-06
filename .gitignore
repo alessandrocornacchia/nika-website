@@ -9,6 +9,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Local agent state
+.letta/
+
 # Logs
 *.log
 
