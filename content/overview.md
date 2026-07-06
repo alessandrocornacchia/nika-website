@@ -15,7 +15,7 @@ Benchmark Suite
 :::
 
 ::: card1_body
-NIKA offers **685 curated network incidents** covering link failures, host failures, routing misconfigurations, and resource contentions. Incidents are reproduced on emulated networks that run real-world protocol stacks, such as BPG, VXLAN, OSPF, DNS, etc.
+NIKA offers **685 curated network incidents**, common across data centers and ISPs. Powered by state-of-the-art network emulators, the benchmark evaluates AI agents against  real-world protocols (e.g., BPG, VXLAN, DNS) and network stacks.
 :::
 
 ::: card2_title

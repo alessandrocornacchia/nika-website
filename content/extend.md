@@ -3,7 +3,7 @@ Define a Task
 :::
 
 ::: title
-Define a New Test in a Few Lines
+Define a New Task in Pure YAML
 :::
 
 ::: desc
