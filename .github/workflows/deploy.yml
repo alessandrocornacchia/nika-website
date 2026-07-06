@@ -29,12 +29,13 @@ jobs:
           cp index.html _site/
           cp -R css js assets _site/
       # Publishes to the gh-pages branch of sands-lab/nika, which serves
-      # https://sands-lab.github.io/nika/. NIKA_DEPLOY_TOKEN is a fine-grained
-      # PAT with contents:write on sands-lab/nika, stored as a repo secret here.
+      # https://sands-lab.github.io/nika/. ACTIONS_DEPLOY_KEY is the private
+      # half of a write-enabled deploy key on sands-lab/nika, stored as a
+      # repo secret here.
       - name: Deploy to sands-lab/nika gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.NIKA_DEPLOY_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: sands-lab/nika
           publish_branch: gh-pages
           publish_dir: ./_site
