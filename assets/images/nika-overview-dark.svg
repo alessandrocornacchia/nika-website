@@ -116,13 +116,11 @@
   <rect x="372" y="122" width="98" height="58" rx="8" fill="#071c30" stroke="#fbbf24" stroke-width="0.8"/>
   <text x="421" y="137" text-anchor="middle" font-size="8" font-weight="600" fill="#fbbf24">High-fidelity infra</text>
   <text x="421" y="149" text-anchor="middle" font-size="7.5" fill="#fcd34d">FRR · Open vSwitch</text>
-  <text x="421" y="161" text-anchor="middle" font-size="7.5" fill="#fcd34d">or your vendor image</text>
+  <text x="421" y="161" text-anchor="middle" font-size="7.5" fill="#fcd34d">Your vendor image</text>
   <text x="421" y="174" text-anchor="middle" font-size="7" fill="#fbbf24" opacity="0.75">NETCONF · gNMI · SNMP</text>
 
-  <rect x="210" y="188" width="130" height="18" rx="5" fill="#071c30" stroke="#4aa8ff" stroke-width="0.5"/>
-  <text x="275" y="200" text-anchor="middle" font-size="8" fill="#4aa8ff">54 fault types · 640 incidents</text>
-  <rect x="348" y="188" width="122" height="18" rx="5" fill="#071c30" stroke="#2dd4a8" stroke-width="0.5"/>
-  <text x="409" y="200" text-anchor="middle" font-size="8" fill="#2dd4a8">5 network scenarios</text>
+  <rect x="210" y="188" width="260" height="18" rx="5" fill="#071c30" stroke="#4aa8ff" stroke-width="0.5"/>
+  <text x="340" y="200" text-anchor="middle" font-size="8" fill="#4aa8ff">54 <tspan fill="#ef4444">fault</tspan> types · 600+ incidents</text>
 
   <rect x="200" y="222" width="280" height="130" rx="7" fill="#071e30" stroke="#2dd4a8" stroke-width="0.7"/>
   <text x="340" y="238" text-anchor="middle" font-size="9" font-weight="600" letter-spacing="0.07em" fill="#2dd4a8">ORCHESTRATION</text>
