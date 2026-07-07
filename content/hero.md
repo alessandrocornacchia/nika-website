@@ -1,5 +1,5 @@
 ::: badge
-New — support for Claude Code and Codex CLI available
+New: support for Claude Code and Codex CLI available
 :::
 
 ::: desc

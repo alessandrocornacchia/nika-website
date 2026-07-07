@@ -25,7 +25,3 @@ Orchestration Platform
 ::: card2_body
 A modular platform that orchestrates **incident replay**, connects AI agents to the network environment via MCP servers for live diagnostic interactions, and provides human-facing **evaluations** of agent performance.
 :::
-
-::: image_caption
-NIKA system architecture
-:::

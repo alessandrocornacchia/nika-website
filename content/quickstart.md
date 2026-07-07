@@ -23,7 +23,7 @@ Configure
 :::
 
 ::: step2_body
-Copy `.env.example` to `.env` and fill in your API keys. NIKA ships no hard-coded defaults — every run needs a configured `.env` or explicit CLI flags.
+Copy `.env.example` to `.env` and fill in your API keys. NIKA ships no hard-coded defaults: every run needs a configured `.env` or explicit CLI flags.
 :::
 
 ::: step3_title

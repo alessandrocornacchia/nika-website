@@ -27,7 +27,7 @@ MCP Tool Integration
 :::
 
 ::: card3_body
-Model Context Protocol servers expose network operations — ping, iperf, BGP/OSPF config, flow rules, telemetry — as callable tools for any MCP-compatible agent.
+Model Context Protocol servers expose network operations (ping, iperf, BGP/OSPF config, flow rules, telemetry) as callable tools for any MCP-compatible agent.
 :::
 
 ::: card4_title
