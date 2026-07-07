@@ -7,7 +7,7 @@ What is NIKA?
 :::
 
 ::: desc
-Think about SWE-bench, but for network troubleshooting: agents interact with real CLIs and telemetry across hundreds of reproducible network incidents, all running on your laptop, cluster, or cloud.
+Think about SWE-bench, but for network troubleshooting. Agents interact with real CLIs and telemetry across hundreds of reproducible network incidents, all running on your laptop, cluster, or cloud.
 :::
 
 ::: card1_title

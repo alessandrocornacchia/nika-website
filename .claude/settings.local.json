@@ -23,7 +23,11 @@
       "Bash(npm run *)",
       "Bash(code --list-extensions)",
       "Read(//home/node/.vscode-server/extensions/**)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "WebFetch(domain:sands-lab.github.io)",
+      "Bash(curl -s \"https://sands-lab.github.io/nika/\")",
+      "Bash(identify /workspaces/nika-website/assets/images/nika-overview-dark.png)",
+      "Bash(identify /workspaces/nika-website/assets/images/og-image.png)"
     ]
   },
   "sandbox": {
