@@ -20,7 +20,10 @@
       "Bash(sed -i 's#<section class=\"section\" id=\"agents\">#<section class=\"section section-alt\" id=\"agents\">#' index.template.html)",
       "Bash(sed -i 's#<section class=\"section section-alt\" id=\"quickstart\">#<section class=\"section\" id=\"quickstart\">#' index.template.html)",
       "Bash(python3 *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(code --list-extensions)",
+      "Read(//home/node/.vscode-server/extensions/**)",
+      "Bash(git *)"
     ]
   },
   "sandbox": {
