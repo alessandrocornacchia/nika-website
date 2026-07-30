@@ -14,6 +14,7 @@ concurrency:
 
 jobs:
   build-and-deploy:
+    if: github.repository == 'alessandrocornacchia/nika-website'  # DO NOT change this line. To submit a website update, submit a PR to alessandrocornacchia/nika-website instead.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
