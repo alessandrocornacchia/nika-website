@@ -11,7 +11,7 @@ A benchmark test is just a short, declarative yaml definition. Choose a network,
 :::
 
 ::: anatomy_title
-Anatomy of a test
+Fields in a case row
 :::
 
 ::: field1_name
@@ -19,7 +19,7 @@ scenario
 :::
 
 ::: field1_body
-Which network to run the test on.
+Registered network ID, such as `dc_clos` or `campus_lan`.
 :::
 
 ::: field2_name
@@ -27,7 +27,7 @@ topo_size
 :::
 
 ::: field2_body
-How large to make it.
+`s`, `m`, or `l` when the scenario is sized; omit for fixed labs.
 :::
 
 ::: field3_name
@@ -35,7 +35,7 @@ problem
 :::
 
 ::: field3_body
-The fault to introduce.
+Registered fault type, such as `link_down`.
 :::
 
 ::: field4_name
@@ -43,9 +43,9 @@ inject
 :::
 
 ::: field4_body
-Where the fault happens.
+Fault parameters (host, interface, and other targets) for that case.
 :::
 
 ::: note
-Want a brand-new network or fault of your own? The [authoring guide](https://github.com/sands-lab/nika/blob/main/docs/creating-benchmark-tasks.md) walks through adding both.
+Want a brand-new network or fault of your own? The [authoring guide](https://github.com/sands-lab/nika/blob/dev/docs/development/creating-benchmark-tasks.md) walks through adding both.
 :::

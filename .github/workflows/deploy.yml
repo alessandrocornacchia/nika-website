@@ -33,6 +33,7 @@ jobs:
       # https://sands-lab.github.io/nika/. ACTIONS_DEPLOY_KEY is the private
       # half of a write-enabled deploy key on sands-lab/nika, stored as a
       # repo secret here.
+      # keep_files: preserve leaderboard/ published by sands-lab/nika-leaderboard CI
       - name: Deploy to sands-lab/nika gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -40,3 +41,4 @@ jobs:
           external_repository: sands-lab/nika
           publish_branch: gh-pages
           publish_dir: ./_site
+          keep_files: true

@@ -7,7 +7,7 @@ Up and Running in Minutes
 :::
 
 ::: desc
-Requires [Kathará](https://www.kathara.org/) (Docker-based) and Python ≥ 3.12.
+Prerequisites: Linux, Python ≥ 3.12, `curl`, and `sudo`.
 :::
 
 ::: step1_title
@@ -15,7 +15,7 @@ Install
 :::
 
 ::: step1_body
-Clone the repository, sync dependencies with `uv`, and activate the virtual environment.
+Clone the repository and run `./scripts/install.sh`. It installs Docker (if needed), uv, Kathará, Containerlab, and Python dependencies, then creates `.env` and `config/nika.yaml` from the examples when missing.
 :::
 
 ::: step2_title
@@ -23,21 +23,21 @@ Configure
 :::
 
 ::: step2_body
-Copy `.env.example` to `.env` and fill in your API keys. NIKA ships no hard-coded defaults: every run needs a configured `.env` or explicit CLI flags.
+Put API keys in `.env`. In `config/nika.yaml`, set `agent.type`, `provider`, and `model`. Run `uv run nika config show` to confirm.
 :::
 
 ::: step3_title
-Deploy & Inject
+Run a benchmark
 :::
 
 ::: step3_body
-List scenarios, deploy one (each run creates a session), then inject a fault with its parameters.
+Run a frozen release, then summarize the scores.
 :::
 
 ::: step4_title
-Run an Agent & Evaluate
+Optional: smoke one incident
 :::
 
 ::: step4_body
-Run any agent against the session, then close it and evaluate with numeric metrics, an LLM judge, and a CSV summary.
+Run a single problem end-to-end, or deploy a lab yourself and drive it with the CLI.
 :::

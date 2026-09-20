@@ -7,53 +7,53 @@ Live Networks and Workloads
 :::
 
 ::: desc
-Each network issue can be instantiated on multiple topologies, and tested with realistic workloads. Need more? Use the NIKA SDK to create your own network scenarios.
+Each incident runs on a concrete topology with realistic services. Catalog: [network scenario reference](https://github.com/sands-lab/nika/blob/dev/docs/operations/network-scenarios.md).
 :::
 
 ::: card1_title
-Data Center (CLOS)
+Data Center Clos
 :::
 
 ::: card1_body
-Multi-tier leaf–spine fabric with edge servers. Models modern hyper-scale data centre networking.
+FRR eBGP Clos (`dc_clos`) on Kathará, or Nokia SR Linux Clos (`min3clos`) on Containerlab.
 :::
 
 ::: card2_title
-Campus Network (3-Tier)
+Campus LAN
 :::
 
 ::: card2_body
-Enterprise core–distribution–access topology. Represents typical university or corporate networks.
+Hierarchical campus with OSPF, DHCP, DNS, and a server farm (`campus_lan`).
 :::
 
 ::: card3_title
-ISP Backbone (Meshed)
+Enterprise WAN
 :::
 
 ::: card3_body
-Provider-style backbone with core and access nodes. Models Internet Service Provider infrastructure.
+Multi-site hub-and-spoke WAN with provider underlay, WireGuard, eBGP overlay, and per-role VRFs (`enterprise_branch`).
 :::
 
 ::: card4_title
-SDN Cloud POP (CLOS/Star)
+ISP Backbone
 :::
 
 ::: card4_body
-SDN fabric with centralised controller and edge switches. Models software-defined cloud edge deployments.
-:::
-
-::: card6_title
-Multi-Tenant Microservices
-:::
-
-::: card6_body
-Attach a k3s cluster running concurrent microservice applications, exposed via MetalLB in BGP mode and NGINX ingress.
+SNDlib graphs such as Abilene and France (`isp_*`), on Kathará (FRR) or Containerlab (SR Linux), with optional IGP and BGP presets.
 :::
 
 ::: card5_title
-llm-d AI Inference
+SDN and P4 Fabrics
 :::
 
 ::: card5_body
-Reproduce an LLM inference cluster and test resilience to network disruption: P/D disaggregation, load balancing, and disaggregated KV Cache storage.
+ONOS + OVS L3 Clos (`sdn_l3_clos`), and BMv2 fabrics under P4Runtime (`p4_dc_fabric`, `p4_dc_gateway` with INT-MX).
+:::
+
+::: card6_title
+Kubernetes Networking
+:::
+
+::: card6_body
+k3s labs for multi-tenant services (`k8s_lab`) and simulated llm-d inference routing (`llmd_lab`).
 :::

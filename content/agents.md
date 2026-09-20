@@ -39,5 +39,5 @@ Community
 :::
 
 ::: community_card_body
-Explore agents and skills shared by the community, and contribute your own. Leaderboard is coming soon.
+Explore agents and skills shared by the community, and contribute your own. See the [leaderboard](https://sands-lab.github.io/nika/leaderboard/).
 :::
