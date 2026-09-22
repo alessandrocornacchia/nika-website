@@ -11,61 +11,62 @@ NIKA exposes network operations through MCP servers, letting any MCP-compatible 
 :::
 
 ::: server1_title
-Base Kathará Server
+Base Host Probes
 :::
 
 ::: server1_tools
-- `get_reachability`: Ping all host pairs
-- `iperf_test`: Bandwidth test between two hosts
-- `systemctl_ops`: Start, stop, or restart services
-- `get_host_net_config`: Retrieve host network config
-- `nft_list_ruleset`: Dump nftables ruleset
+- `ping_pair`: ping a host pair
+- `traceroute`: trace a path
+- `iperf_test`: bandwidth between hosts
+- `get_host_net_config`: host network config
+- `systemctl_ops`: start, stop, or restart services
 :::
 
 ::: server2_title
-BMv2 P4 Server
+Pingmesh ([Guo et al., SIGCOMM '15](https://doi.org/10.1145/2785956.2787496))
 :::
 
 ::: server2_tools
-- `bmv2_get_log`: Retrieve BMv2 switch logs
-- `bmv2_get_counter_arrays`: Read counter arrays
+- `run_pingmesh_snapshot`: reachability, loss, and RTT snapshot
 :::
 
 ::: server3_title
-FRRouting Server
+Packet Capture
 :::
 
 ::: server3_tools
-- `frr_get_bgp_conf`: Retrieve BGP configuration
-- `frr_get_ospf_conf`: Retrieve OSPF configuration
+- `packet_capture_start`: start a bounded capture
+- `packet_capture_stop`: stop and return the pcap path
+- `packet_capture_inspect`: summary, packets, or protocol views
 :::
 
 ::: server4_title
-INT / InfluxDB Server
+INT Telemetry
 :::
 
 ::: server4_tools
-- `influx_list_buckets`: List InfluxDB buckets
-- `influx_get_measurements`: Retrieve measurements
-- `influx_query_measurement`: Query telemetry data
+- `int_query_telemetry`: INT-MX hop traces
 :::
 
 ::: server5_title
-Generic Server
+Routing CLIs
 :::
 
 ::: server5_tools
-- `google_search`: Web search for context
+- `frr_get_bgp_conf`: FRR BGP (Kathará)
+- `frr_get_ospf_conf`: FRR OSPF (Kathará)
+- `srl_show_bgp_summary`: SR Linux BGP (Containerlab)
+- `srl_show_ip_route`: SR Linux routes (Containerlab)
+- `iosxr_get_bgp_conf`: Cisco XRd BGP
+- `iosxr_show_route`: Cisco XRd routes
 :::
 
 ::: server6_title
-Task Management Server
+Task Submission
 :::
 
 ::: server6_tools
-- `list_avail_problems`: List available problems
-- `get_submission_template`: Get submission template
-- `submit`: Submit a solution
+- `submit`: anomaly decision and root-cause IDs
 :::
 
 ::: note
