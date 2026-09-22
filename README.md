@@ -1,5 +1,12 @@
 # Nika Website
 
+## Slack community invite
+
+The public join page is [`community/`](community/)
+(`https://sands-lab.github.io/nika/community/`). When the Slack shared invite
+expires, update **only** [`community/invite-url.js`](community/invite-url.js).
+Do not put the raw `join.slack.com` URL in the homepage, README, or docs.
+
 ## Editing content
 
 The page text lives in Markdown, not directly in HTML:
