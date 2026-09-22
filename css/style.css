@@ -186,7 +186,8 @@ code {
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 10px;
   flex: 1;
 }
 .nav-links a {
@@ -199,7 +200,13 @@ code {
 .nav-links a:hover  { color: var(--text); }
 .nav-links a.active { color: var(--cyan); }
 
-.nav-actions { display: flex; gap: 8px; margin-left: auto; }
+.nav-actions { display: flex; gap: 6px; margin-left: auto; flex-shrink: 0; }
+.nav-actions .btn {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  gap: 6px;
+}
 
 .mobile-menu { display: none; }
 
@@ -902,7 +909,7 @@ code {
 /* ── CITATION ────────────────────────────────────────────────────────────── */
 .cite-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 .cite-card {

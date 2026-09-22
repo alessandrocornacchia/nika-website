@@ -9,6 +9,11 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Local agent rules / guidance (kept on disk, not committed)
+AGENTS.md
+CLAUDE.md
+.cursor/
+
 # Local agent state
 .letta/
 
