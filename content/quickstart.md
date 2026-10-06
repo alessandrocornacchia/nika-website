@@ -7,7 +7,7 @@ Up and Running in Minutes
 :::
 
 ::: desc
-Prerequisites: Linux, Python ≥ 3.12, `curl`, and `sudo`.
+See the [setup guide](https://github.com/sands-lab/nika/blob/main/README.md#basic-setup) for installation requirements and configuration details.
 :::
 
 ::: step1_title
