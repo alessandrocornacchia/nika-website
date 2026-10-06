@@ -3,49 +3,49 @@ Define a Task
 :::
 
 ::: title
-Define a New Task in Pure YAML
+Define a Troubleshooting Task
 :::
 
 ::: desc
-A benchmark test is just a short, declarative yaml definition. Choose a network, the size to run it at, the fault to introduce, and where it happens, NIKA takes care of the rest.
+Choose a network, its size, and the fault an agent will investigate.
 :::
 
 ::: anatomy_title
-Fields in a case row
+What Defines a Task
 :::
 
 ::: field1_name
-scenario
+Network
 :::
 
 ::: field1_body
-Registered network ID, such as `dc_clos` or `campus_lan`.
+Choose a network, such as a data center or campus LAN.
 :::
 
 ::: field2_name
-topo_size
+Network size
 :::
 
 ::: field2_body
-`s`, `m`, or `l` when the scenario is sized; omit for fixed labs.
+Choose a small, medium, or large topology where supported.
 :::
 
 ::: field3_name
-problem
+Fault
 :::
 
 ::: field3_body
-Registered fault type, such as `link_down`.
+Choose the incident to reproduce, such as a failed link.
 :::
 
 ::: field4_name
-inject
+Fault location
 :::
 
 ::: field4_body
-Fault parameters (host, interface, and other targets) for that case.
+Specify where the fault occurs in the network.
 :::
 
 ::: note
-Want a brand-new network or fault of your own? The [authoring guide](https://github.com/sands-lab/nika/blob/dev/docs/development/creating-benchmark-tasks.md) walks through adding both.
+See the [task authoring guide](https://github.com/sands-lab/nika/blob/main/docs/development/creating-benchmark-tasks.md) for definitions and instructions for adding networks and faults.
 :::

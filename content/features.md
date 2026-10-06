@@ -19,7 +19,7 @@ Pre-built Scenarios & Faults
 :::
 
 ::: card2_body
-Sized scenarios and injectable faults, ready to deploy with a single CLI command.
+Pre-built networks of different sizes, with faults you can introduce for troubleshooting tasks.
 :::
 
 ::: card3_title
@@ -35,5 +35,5 @@ Reproducible Evaluation
 :::
 
 ::: card4_body
-Score submitted resource and fault-type IDs against benchmark ground truth, then publish comparable summaries for frozen releases.
+Measure whether agents identify the cause of network incidents, and compare their results on the same benchmark tasks.
 :::

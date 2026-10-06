@@ -3,19 +3,19 @@ Agents & Harnesses
 :::
 
 ::: title
-Bring Any Agent, Any Model
+Agent Integration
 :::
 
 ::: desc
-Frontier models, coding assistants, and your own custom agents: swap them in and out of the NIKA benchmark with a single command.
+Evaluate built-in or custom agents on the NIKA benchmark.
 :::
 
 ::: byo_card_title
-Bring Your Own (BYO)
+Custom Agents
 :::
 
 ::: byo_card_body
-Already built an agent on a popular framework? Plug it in and benchmark it against everything else.
+Connect your existing agent to NIKA and evaluate it on network troubleshooting tasks.
 :::
 
 ::: cli_card_title
