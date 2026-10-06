@@ -1,5 +1,5 @@
 ::: badge
-New: support for Claude Code and Codex CLI available
+New: NIKA 2.0 has been released
 :::
 
 ::: desc
