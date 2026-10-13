@@ -1,8 +1,12 @@
 ::: badge
-New: NIKA 2.0 has been released
+New: NIKA 0.2.0 has been released
 :::
 
 ::: desc
 <!-- A unified platform for agentic evaluations on realistic network troubleshooting tasks. -->
 A unified platform for benchmarking AI agents on realistic network troubleshooting tasks.
+:::
+
+::: demo_link
+Watch the 20-second demo
 :::

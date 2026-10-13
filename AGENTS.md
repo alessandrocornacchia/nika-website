@@ -177,6 +177,20 @@ reputation as a public claim.
   them as a group without a request.
 - Ask before you recommend any new external resource.
 
+### Credits and attribution
+
+Do not add, change or remove credit to any person or organization unless the
+user explicitly authorizes it. Credit includes "Built by" lines, author or
+maintainer names, personal profile links, acknowledgements and contributor
+lists, anywhere on the site.
+
+- The site credit is **Built by SANDS Lab @ KAUST**, linked to
+  https://sands.kaust.edu.sa/. Keep it as is.
+- Do not name individual people as builders, authors or maintainers of the
+  website or of NIKA.
+- Citation entries (BibTeX author lists) are references, not credits. Keep
+  them exactly as published.
+
 ### Evergreen wording
 
 Refer to **NIKA** or **the NIKA benchmark**, not release labels such as
