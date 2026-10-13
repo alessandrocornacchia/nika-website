@@ -1,5 +1,5 @@
 ::: badge
-New: NIKA 2.0 has been released
+New: NIKA 0.2.0 has been released
 :::
 
 ::: desc
