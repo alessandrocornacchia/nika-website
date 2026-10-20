@@ -67,6 +67,10 @@ every detail.
 - **Headings:** use concise, conventional technical terms that identify the
   subject. Avoid both long conversational headings and compressed advertising
   phrases. Shorter is not better if the meaning becomes vague or misleading.
+- **Heading capitalization:** write section titles in title case, matching the
+  existing titles: capitalize major words and keep short articles,
+  conjunctions and prepositions lowercase, as in "Up and Running in Minutes",
+  "Define a Troubleshooting Task" and "See It in Action".
 
 These are defaults, not word quotas. Review the visual density of the whole
 section on desktop and mobile, not just whether individual sentences are
@@ -194,10 +198,14 @@ lists, anywhere on the site.
 ### Evergreen wording
 
 Refer to **NIKA** or **the NIKA benchmark**, not release labels such as
-"the frozen release nika-bench 0.2.0", in descriptive text. Do not add version
+"the frozen release nika-bench 0.2", in descriptive text. Do not add version
 numbers to badges, introductions or cards just because a source provides them.
 A release version belongs only where identifying that release is essential,
 such as a verified command or an explicitly requested release announcement.
+
+Write release versions as major.minor, without the patch digit: **0.2**, not
+0.2.0. This applies everywhere on the site, including commands; the NIKA CLI
+resolves `--release 0.2` to the 0.2.0 release.
 
 Counts must have a clear meaning and a reason to be on the page. Verification
 alone does not make a number useful. Do not add unexplained numbers, dates,
@@ -233,6 +241,10 @@ compliant while leaving the issue unresolved.
   first and wait for the user's explicit approval before implementing it.
   A request to revise these guidelines is documentation-only: do not also edit
   website content, templates, assets or generated output.
+- **Browser testing.** Unless the user says otherwise, check every visual or
+  behavioural change in at least Safari (WebKit) and Chrome (Chromium), on
+  desktop and mobile widths. Animations, SVG effects and layout can differ
+  between engines, so a change verified in one browser is not verified.
 - **Publishing.** Do not commit, push, open pull requests or deploy unless the
   user explicitly asks. A push to `main` starts the deployment workflow, which
   publishes the public site.
@@ -259,3 +271,5 @@ compliant while leaving the issue unresolved.
    link? A passing text test does not replace editorial and visual review.
 7. Did you edit only the source files in scope, rebuild `index.html` when
    needed, and leave committing and publishing to the user?
+8. Did you check the change in at least Safari (WebKit) and Chrome
+   (Chromium), on desktop and mobile widths?

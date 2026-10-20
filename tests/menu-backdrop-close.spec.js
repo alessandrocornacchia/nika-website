@@ -3,6 +3,13 @@ import { test, expect } from '@playwright/test';
 test('tapping the menu backdrop closes the menu', async ({ page }) => {
   await page.goto('/');
 
+  // The navbar is hidden over the hero buttons; scroll past them first.
+  await page.evaluate(() => {
+    const ctas = document.querySelector('.hero-ctas').getBoundingClientRect();
+    window.scrollTo({ top: ctas.bottom + window.scrollY + 50, behavior: 'instant' });
+  });
+  await expect(page.locator('#navbar')).not.toHaveClass(/nav-hidden/);
+
   await page.click('#nav-hamburger');
   await expect(page.locator('#mobile-menu')).toHaveClass(/open/);
 
