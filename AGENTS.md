@@ -241,6 +241,10 @@ compliant while leaving the issue unresolved.
   first and wait for the user's explicit approval before implementing it.
   A request to revise these guidelines is documentation-only: do not also edit
   website content, templates, assets or generated output.
+- **Browser testing.** Unless the user says otherwise, check every visual or
+  behavioural change in at least Safari (WebKit) and Chrome (Chromium), on
+  desktop and mobile widths. Animations, SVG effects and layout can differ
+  between engines, so a change verified in one browser is not verified.
 - **Publishing.** Do not commit, push, open pull requests or deploy unless the
   user explicitly asks. A push to `main` starts the deployment workflow, which
   publishes the public site.
@@ -267,3 +271,5 @@ compliant while leaving the issue unresolved.
    link? A passing text test does not replace editorial and visual review.
 7. Did you edit only the source files in scope, rebuild `index.html` when
    needed, and leave committing and publishing to the user?
+8. Did you check the change in at least Safari (WebKit) and Chrome
+   (Chromium), on desktop and mobile widths?

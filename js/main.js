@@ -107,6 +107,18 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // The hero buttons duplicate the navbar links, so keep the navbar hidden
+  // while they are on screen and slide it in once they scroll out of view.
+  const heroCtas = document.querySelector('.hero-ctas');
+  if (!heroCtas || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(
+    ([entry]) => {
+      const ctasVisible = entry.isIntersecting || entry.boundingClientRect.top > 0;
+      navbar.classList.toggle('nav-hidden', ctasVisible && !navbar.classList.contains('menu-open'));
+    },
+    { rootMargin: '-64px 0px 0px 0px' }
+  ).observe(heroCtas);
 })();
 
 /* ── MOBILE MENU ─────────────────────────────────────────────────────────── */
@@ -209,6 +221,31 @@
       });
     });
   });
+})();
+
+/* ── ARCHITECTURE DIAGRAM: inline the animated SVG ─────────────────────── */
+// The diagram animates on its own as an <img>, but its hover effects need the
+// SVG in the page. Swap the <img> for the inline SVG when it can be fetched
+// (not over file://), and pause the animation while it is off screen.
+(function () {
+  const img = document.querySelector('img.overview-image[src$=".svg"]');
+  if (!img || !window.fetch) return;
+  fetch(img.src)
+    .then((res) => (res.ok ? res.text() : Promise.reject()))
+    .then((text) => {
+      const svg = new DOMParser().parseFromString(text, 'image/svg+xml').documentElement;
+      if (svg.nodeName !== 'svg') return;
+      svg.classList.add('overview-image');
+      svg.setAttribute('aria-label', img.alt);
+      img.replaceWith(document.importNode(svg, true));
+      const inline = document.querySelector('svg.overview-image');
+      if (!inline || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) inline.unpauseAnimations();
+        else inline.pauseAnimations();
+      }).observe(inline);
+    })
+    .catch(() => {});
 })();
 
 /* ── DEMO VIDEO: lazy-load, reveal, autoplay muted while in view ────────── */
