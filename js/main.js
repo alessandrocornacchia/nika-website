@@ -211,29 +211,6 @@
   });
 })();
 
-/* ── ACTIVE NAV LINK ON SCROLL ───────────────────────────────────────────── */
-(function () {
-  const sections = document.querySelectorAll('section[id]');
-  const links    = document.querySelectorAll('.nav-links a[href^="#"]');
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          links.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(
-            `.nav-links a[href="#${entry.target.id}"]`
-          );
-          if (active) active.classList.add('active');
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-
-  sections.forEach(s => observer.observe(s));
-})();
-
 /* ── DEMO VIDEO: lazy-load, reveal, autoplay muted while in view ────────── */
 (function () {
   const video = document.querySelector('.demo-video');
@@ -256,8 +233,7 @@
     return;
   }
 
-  // Fetch the video only once it starts scrolling into view. It sits just
-  // below the hero, so a pre-load margin would fetch it on every page load.
+  // Fetch the video only once it starts scrolling into view.
   new IntersectionObserver((entries, obs) => {
     if (entries.some((e) => e.isIntersecting)) {
       loadSources();

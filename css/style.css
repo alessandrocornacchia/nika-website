@@ -186,24 +186,6 @@ code {
 .logo-n    { color: var(--cyan); }
 .logo-rest { color: #fff; }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-  min-width: 0;
-}
-.nav-links a {
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  transition: color var(--transition);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.nav-links a:hover  { color: var(--text); }
-.nav-links a.active { color: var(--cyan); }
-
 .nav-actions { display: flex; gap: 6px; margin-left: auto; flex-shrink: 0; }
 .nav-actions .btn {
   font-size: 0.8125rem;
@@ -272,16 +254,19 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: var(--cyan);
-  background: rgba(0,212,255,0.08);
-  border: 1px solid rgba(0,212,255,0.2);
-  padding: 6px 14px;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-hover);
+  padding: 4px 12px;
   border-radius: 100px;
   margin-bottom: 32px;
+  transition: color var(--transition), border-color var(--transition);
 }
-.hero-badge svg { width: 14px; height: 14px; }
+/* Low-key news note: neutral grey, brightening on hover. */
+.hero-badge:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+.hero-badge svg { width: 12px; height: 12px; }
 
 .hero-title {
   display: flex;
@@ -1055,7 +1040,6 @@ code {
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
 @media (max-width: 1100px) {
-  .nav-links   { display: none; }
   .nav-actions { display: none; }
   .nav-hamburger { display: flex; }
 
@@ -1072,22 +1056,6 @@ code {
     border-top: 1px solid var(--border);
     z-index: 9999;
   }
-  .mobile-nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 16px;
-    border-bottom: 1px solid var(--border);
-  }
-  .mobile-nav-links a {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color var(--transition);
-  }
-  .mobile-nav-links a:hover { color: var(--text); }
   .mobile-nav-actions {
     display: flex;
     flex-direction: column;
@@ -1119,16 +1087,18 @@ code {
 }
 
 /* ── DEMO VIDEO ──────────────────────────────────────────────────────────── */
-/* Inside the quick start section, between its subtitle and the steps. */
+/* Frameless, with soft edges that fade into the section background. */
 .demo-video-frame {
-  max-width: 960px;
-  margin: 0 auto 64px;
-  scroll-margin-top: 96px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--border-hover);
-  background: var(--bg-card);
-  box-shadow: var(--shadow-lg), 0 0 80px rgba(0, 212, 255, 0.06);
+  max-width: 900px;
+  margin: 0 auto;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 6%, #000 94%, transparent),
+    linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, #000 6%, #000 94%, transparent),
+    linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  mask-composite: intersect;
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 /* Fade/slide in on first view; only when JS is running (class set by main.js). */
@@ -1138,23 +1108,170 @@ code {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  background: var(--bg);
+  background: transparent;
 }
 @media (prefers-reduced-motion: reduce) {
   .demo-video-frame { transition: none; }
 }
 
 /* ── HERO DEMO LINK ──────────────────────────────────────────────────────── */
+/* Pill with a pulsing play button and a light sweeping left to right. */
 .hero-demo-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -28px;
+  margin-bottom: 40px;
+  padding: 6px 18px 6px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: rgba(0, 212, 255, 0.06);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--cyan);
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+}
+/* Band of light crossing the pill. */
+.hero-demo-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(100deg, transparent 35%, rgba(0, 212, 255, 0.35) 50%, transparent 65%);
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  animation: demo-sweep 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+.hero-demo-link:hover {
+  border-color: rgba(0, 212, 255, 0.7);
+  background: rgba(0, 212, 255, 0.12);
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.25);
+}
+.hero-demo-play {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--cyan);
+  color: var(--bg);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+}
+.hero-demo-play svg { width: 12px; height: 12px; margin-left: 2px; }
+/* Expanding ring around the play button. */
+.hero-demo-play::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--cyan);
+  animation: demo-pulse 1.6s ease-out infinite;
+}
+/* White highlight crossing the text in step with the band. */
+.hero-demo-text {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(100deg, var(--cyan) 35%, #fff 50%, var(--cyan) 65%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: demo-sweep 2.8s ease-in-out infinite;
+}
+@keyframes demo-pulse {
+  0%   { transform: scale(1);   opacity: 0.9; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+@keyframes demo-sweep {
+  0%   { background-position: 100% 0; }
+  100% { background-position: 0% 0; }
+}
+
+/* ── LEADERBOARD BANNER ──────────────────────────────────────────────────── */
+/* Gold call-out in the hero, under the subtitle, linking to the leaderboard. */
+.lb-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 620px;
+  margin: 0 auto 56px;
+  text-align: left;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(245, 197, 66, 0.45);
+  background:
+    radial-gradient(120% 160% at 0% 50%, rgba(245, 197, 66, 0.16), transparent 55%),
+    linear-gradient(135deg, #17150d, var(--bg-card));
+  box-shadow: var(--shadow), 0 0 48px rgba(245, 197, 66, 0.10);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+/* Light sweep across the banner. */
+.lb-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 236, 160, 0.12) 50%, transparent 60%);
+  transform: translateX(-100%);
+  animation: lb-shine 5s ease-in-out infinite;
+  pointer-events: none;
+}
+.lb-banner:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 197, 66, 0.8);
+  box-shadow: var(--shadow-lg), 0 0 64px rgba(245, 197, 66, 0.22);
+}
+.lb-cup {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 197, 66, 0.28), rgba(245, 197, 66, 0.04) 70%);
+  border: 1px solid rgba(245, 197, 66, 0.35);
+}
+.lb-cup svg { width: 36px; height: 36px; filter: drop-shadow(0 2px 8px rgba(245, 197, 66, 0.45)); }
+.lb-text { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.lb-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f5c542;
+}
+.lb-title { font-size: 1.125rem; font-weight: 700; color: var(--text); line-height: 1.25; }
+.lb-desc { font-size: 0.875rem; color: var(--text-muted); }
+.lb-cta {
+  flex: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: -28px;
-  margin-bottom: 40px;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  transition: var(--transition);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #1a1305;
+  background: linear-gradient(135deg, #fde68a, #f5c542 55%, #d4a017);
+  box-shadow: 0 4px 16px rgba(245, 197, 66, 0.3);
 }
-.hero-demo-link svg { width: 14px; height: 14px; color: var(--cyan); }
-.hero-demo-link:hover { color: var(--cyan); }
+.lb-cta svg { width: 16px; height: 16px; transition: transform var(--transition); }
+.lb-banner:hover .lb-cta svg { transform: translateX(3px); }
+@keyframes lb-shine {
+  0%, 60% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@media (max-width: 640px) {
+  .lb-banner { flex-wrap: wrap; gap: 12px 14px; padding: 14px 16px; }
+  .lb-cta { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lb-banner, .lb-cta svg { transition: none; }
+  .lb-banner::after { animation: none; display: none; }
+}

@@ -194,10 +194,14 @@ lists, anywhere on the site.
 ### Evergreen wording
 
 Refer to **NIKA** or **the NIKA benchmark**, not release labels such as
-"the frozen release nika-bench 0.2.0", in descriptive text. Do not add version
+"the frozen release nika-bench 0.2", in descriptive text. Do not add version
 numbers to badges, introductions or cards just because a source provides them.
 A release version belongs only where identifying that release is essential,
 such as a verified command or an explicitly requested release announcement.
+
+Write release versions as major.minor, without the patch digit: **0.2**, not
+0.2.0. This applies everywhere on the site, including commands; the NIKA CLI
+resolves `--release 0.2` to the 0.2.0 release.
 
 Counts must have a clear meaning and a reason to be on the page. Verification
 alone does not make a number useful. Do not add unexplained numbers, dates,

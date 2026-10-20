@@ -19,7 +19,7 @@ Link & Interface
 :::
 
 ::: d1_body
-`link_down`, flap, capacity bottleneck, packet corruption.
+Link down, flap, capacity bottleneck, packet corruption.
 :::
 
 ::: d2_title
