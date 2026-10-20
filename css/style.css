@@ -1120,39 +1120,19 @@ code {
 }
 
 /* ── HERO DEMO LINK ──────────────────────────────────────────────────────── */
-/* Pill with a pulsing play button and a light sweeping left to right. */
+/* Frameless link: pulsing play button and a light sweeping across the text. */
 .hero-demo-link {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 32px;
-  padding: 6px 18px 6px 6px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 212, 255, 0.35);
-  background: rgba(0, 212, 255, 0.06);
   font-size: 0.9375rem;
   font-weight: 500;
   color: var(--cyan);
-  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
-/* Band of light crossing the pill. */
-.hero-demo-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(100deg, transparent 35%, rgba(0, 212, 255, 0.35) 50%, transparent 65%);
-  background-size: 300% 100%;
-  background-repeat: no-repeat;
-  animation: demo-sweep 2.8s ease-in-out infinite;
-  pointer-events: none;
-}
-.hero-demo-link:hover {
-  border-color: rgba(0, 212, 255, 0.7);
-  background: rgba(0, 212, 255, 0.12);
-  box-shadow: 0 0 24px rgba(0, 212, 255, 0.25);
-}
+.hero-demo-link:hover { text-decoration: none; }
+.hero-demo-link:hover .hero-demo-play { box-shadow: 0 0 20px rgba(0, 212, 255, 0.85); }
 .hero-demo-play {
   position: relative;
   z-index: 1;
@@ -1164,6 +1144,7 @@ code {
   background: var(--cyan);
   color: var(--bg);
   box-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+  transition: box-shadow var(--transition);
 }
 .hero-demo-play svg { width: 12px; height: 12px; margin-left: 2px; }
 /* Expanding ring around the play button. */
@@ -1263,12 +1244,12 @@ code {
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.8125rem;
-  color: #f5c542;
-  border: 1px solid rgba(245, 197, 66, 0.55);
-  transition: color var(--transition), background var(--transition);
+  color: #1a1305;
+  background: #f5c542;
+  border: 1px solid #f5c542;
+  transition: background var(--transition), border-color var(--transition);
 }
-/* Outline button that fills with gold on hover. */
-.lb-banner:hover .lb-cta { color: #1a1305; background: #f5c542; }
+.lb-banner:hover .lb-cta { background: #fcd34d; border-color: #fcd34d; }
 .lb-cta svg { width: 14px; height: 14px; transition: transform var(--transition); }
 .lb-banner:hover .lb-cta svg { transform: translateX(3px); }
 @keyframes lb-shine {
