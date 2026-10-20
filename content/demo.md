@@ -3,5 +3,5 @@ Demo
 :::
 
 ::: title
-See it in action
+See It in Action
 :::

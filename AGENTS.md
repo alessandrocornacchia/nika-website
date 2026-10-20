@@ -67,6 +67,10 @@ every detail.
 - **Headings:** use concise, conventional technical terms that identify the
   subject. Avoid both long conversational headings and compressed advertising
   phrases. Shorter is not better if the meaning becomes vague or misleading.
+- **Heading capitalization:** write section titles in title case, matching the
+  existing titles: capitalize major words and keep short articles,
+  conjunctions and prepositions lowercase, as in "Up and Running in Minutes",
+  "Define a Troubleshooting Task" and "See It in Action".
 
 These are defaults, not word quotas. Review the visual density of the whole
 section on desktop and mobile, not just whether individual sentences are
