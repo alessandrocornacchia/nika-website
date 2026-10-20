@@ -227,6 +227,17 @@
     video.load();
   }
 
+  // Controls stay hidden until the pointer is over the video. On touch
+  // screens, which have no hover, they appear on the first tap and stay.
+  function showControls(on) {
+    video.controls = on;
+    if (frame) frame.classList.toggle('show-controls', on);
+  }
+  video.addEventListener('pointerenter', () => showControls(true));
+  video.addEventListener('pointerleave', (e) => {
+    if (e.pointerType === 'mouse') showControls(false);
+  });
+
   // Without IntersectionObserver: just make the video playable on demand.
   if (!('IntersectionObserver' in window)) {
     loadSources();

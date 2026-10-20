@@ -8,5 +8,5 @@ The agentic benchmark for live network operations.
 :::
 
 ::: demo_link
-Watch the 20-second demo
+Watch the demo
 :::

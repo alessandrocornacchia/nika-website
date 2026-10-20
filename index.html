@@ -252,6 +252,14 @@
         </h1>
         <p class="hero-desc"><!-- A unified platform for agentic evaluations on realistic network troubleshooting tasks. -->
 The agentic benchmark for live network operations.</p>
+        <a class="hero-demo-link" href="#demo">
+          <span class="hero-demo-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5.14v13.72a1 1 0 001.5.86l11-6.86a1 1 0 000-1.72l-11-6.86A1 1 0 008 5.14z" />
+            </svg>
+          </span>
+          <span class="hero-demo-text">Watch the demo</span>
+        </a>
         <a
           class="lb-banner"
           href="https://sands-lab.github.io/nika/leaderboard/"
@@ -300,14 +308,6 @@ The agentic benchmark for live network operations.</p>
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </span>
-        </a>
-        <a class="hero-demo-link" href="#demo">
-          <span class="hero-demo-play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5.14v13.72a1 1 0 001.5.86l11-6.86a1 1 0 000-1.72l-11-6.86A1 1 0 008 5.14z" />
-            </svg>
-          </span>
-          <span class="hero-demo-text">Watch the 20-second demo</span>
         </a>
       </div>
       <div class="hero-scroll-hint">
@@ -1011,7 +1011,7 @@ nika eval judge</code></pre>
         </div>
         <div class="demo-video-frame">
           <!-- Sources are attached by js/main.js when the video scrolls into view;
-               it then loops muted, with no controls, and pauses when scrolled away. -->
+               it then loops muted, shows controls on hover, and pauses when scrolled away. -->
           <video
             class="demo-video"
             autoplay
@@ -1020,7 +1020,7 @@ nika eval judge</code></pre>
             playsinline
             preload="none"
             poster="assets/video/nika-demo-poster.webp"
-            aria-label="NIKA demo: launching the interactive shell and browsing benchmark tasks"
+            aria-label="NIKA demo: the interactive shell, benchmark tasks and agents"
           >
             <source data-src="assets/video/nika-demo.mp4" type="video/mp4" />
             <source data-src="assets/video/nika-demo.webm" type="video/webm" />
